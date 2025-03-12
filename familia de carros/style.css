@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #0056b3;
+  }
+  
+  h2 {
+    color: #0056b3;
+    margin-top: 30px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box; /* Para que o padding não aumente o tamanho do elemento */
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s; /* Efeito de hover */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  /* Estilos para dispositivos menores */
+  @media (max-width: 600px) {
+    label {
+      width: 100%;
+      text-align: left;
+    }
+  
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+    }
+  }
+    
