@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Garagem Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Garagem Inteligente</h1>
+
+  <h2>Veículos</h2>
+  <div id="veiculos">
+    <div>
+     <img src="img/carro 3.jpg" alt="carro foda ne">
+      <input type="text" id="imagemCarro" value="">
+      <button onclick="garagem.selecionarVeiculo('carro')">Selecionar Carro</button>
+    </div>
+    <div>
+      <label for="imagemCarroEsportivo">Imagem 2 (Carro Esportivo):</label>
+      <input type="text" id="imagemCarroEsportivo" value="">
+      <button onclick="garagem.selecionarVeiculo('carroEsportivo')">Selecionar Carro Esportivo</button>
+    </div>
+    <div>
+     <img src="img/slk, caminhao rosa vey.jpg" alt="caminhao">
+      <input type="text" id="imagemCaminhao" value="">
+      <button onclick="garagem.selecionarVeiculo('caminhao')">Selecionar Caminhão</button>
+    </div>
+  </div>
+
+  <h2>Ações</h2>
+  <div id="acoes">
+    <button onclick="garagem.interagir('ligar')">Ligar</button>
+    <button onclick="garagem.interagir('desligar')">Desligar</button>
+    <button onclick="garagem.interagir('acelerar')">Acelerar</button>
+    <button onclick="garagem.interagir('frear')">Frear</button>
+    <button onclick="garagem.interagir('ativarTurbo')">Ativar Turbo</button>
+    <button onclick="garagem.interagir('desativarTurbo')">Desativar Turbo</button>
+    <button onclick="garagem.interagir('carregar')">Carregar</button>
+    <button onclick="garagem.interagir('descarregar')">Descarregar</button>
+  </div>
+
+  <h2>Informações do Veículo</h2>
+  <div id="informacoesVeiculo">Nenhum veículo selecionado.</div>
+
+  <script src="js/veiculo.js"></script>
+  <script src="js/garagem.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
