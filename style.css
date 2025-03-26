@@ -1,50 +1,87 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: sans-serif;
+    text-align: center;
   }
   
-  h1, h2 {
-    color: #333;
+  /* Estilo para os containers dos inputs */
+  .input-container {
+    margin-bottom: 5px; /* Espaço entre os inputs */
+    display: flex; /* Use flexbox para alinhar os elementos */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
   }
   
-  #veiculos,
-  #acoes {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
+  /* Estilo para os containers dos botões */
+  .button-container {
+    margin-top: 10px; /* Espaço acima dos botões */
   }
   
-  #veiculos > div {
-      margin-bottom: 10px;
-  }
-  
-  label {
-      display: block;
-      margin-bottom: 5px;
-  }
-  
-  input[type="text"] {
-      margin-bottom: 5px;
+  input[type="text"],
+  input[type="number"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 200px; /* Ajuste a largura conforme necessário */
   }
   
   button {
-    padding: 8px 12px;
-    background-color: #007bff;
+    padding: 8px 15px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
-    margin-right: 5px;
+    /* text-align: center;  Remova esta linha */
+    /* text-align: justify; Remova esta linha */
+    margin: 5px; /* Adicione margem para espaçamento entre os botões */
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #3e8e41;
   }
   
-  #informacoesVeiculo {
+  /* Estilo geral para as seções dos veículos */
+  .veiculo-container {
+    margin-bottom: 30px; /* Espaço entre as seções */
+    text-align: center; /* Centraliza o conteúdo */
+  }
+  
+  /* Estilo para o contêiner da imagem */
+  .imagem-container {
+    margin-bottom: 15px; /* Espaço entre a imagem e as opções */
+    text-align: center;
+  }
+  
+  /* Estilo para a imagem */
+  .veiculo-imagem {
+    width: 150px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    border: 2px solid #ddd; /* Borda suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    animation: moverImagem 5s linear infinite; /* Adiciona a animação */
+    margin: 0 auto;
+  }
+  
+  /* Estilo para as informações do veículo */
+  .veiculo-info {
+    margin-top: 10px;
     font-weight: bold;
+    text-align: center;
   }
   
-  #informacoesVeiculo img {
-      margin-right: 10px;
-      margin-bottom: 10px;
+  img {
+    text-align: center;
   }
+  
+  /* Animação de movimento */
+  @keyframes moverImagem {
+    0% {
+      transform: translateX(0); /* Início: sem movimento */
+    }
+    50% {
+      transform: translateX(20px); /* Meio: move 20px para a direita */
+    }
+    100% {
+      transform: translateX(0); /* Fim: retorna à posição original */
+    }
+  }
+  
