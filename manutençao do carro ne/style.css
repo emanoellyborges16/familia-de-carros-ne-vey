@@ -1,0 +1,342 @@
+/* Estilo Geral */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Remove margem padrão do body */
+    padding: 20px; /* Adiciona padding geral */
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+    text-align: center; /* Centraliza títulos */
+}
+
+h1 {
+    margin-top: 0; /* Remove margem superior do H1 */
+}
+
+/* Estilos para os ícones estáticos no cabeçalho */
+.header-icons {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icons img {
+    vertical-align: middle;
+    height: 60px; /* Aumenta a altura dos ícones no cabeçalho */
+}
+
+/* Container geral */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px; /* Limita largura máxima */
+    margin: 20px auto; /* Centraliza o container */
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do formulário */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"], /* Estilo para datepicker nativo */
+form select,
+form textarea,
+form input.datepicker { /* Estilo para input com Flatpickr */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input.datepicker {
+    background-color: white;
+    cursor: pointer;
+}
+
+form button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+/* Estilos para a lista de veículos */
+#vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cards um pouco maiores */
+    gap: 20px;
+}
+
+.vehicle-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilo do cabeçalho do card (título + ícone dinâmico) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.card-header h4 {
+    margin: 0;
+    flex-grow: 1;
+    color: #0056b3;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+/* Estilo do ícone dinâmico do veículo no card */
+.vehicle-icon {
+    width: 50px; /* Aumenta o tamanho do ícone no card */
+    height: 50px; /* Aumenta o tamanho do ícone no card */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Estilo do texto dentro do card */
+.vehicle-card p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.vehicle-card p small { /* Estilo para o ID */
+    color: #777;
+    font-size: 0.8em;
+    word-break: break-all;
+}
+
+.vehicle-card button.manage-maintenance-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.vehicle-card button.manage-maintenance-btn:hover {
+    background-color: #0056b3;
+}
+
+.specific-fields {
+    border-left: 3px solid #eee;
+    padding-left: 15px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px); /* Efeito de desfoque no fundo */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 8% auto;
+    padding: 25px 30px;
+    border: 1px solid #ccc;
+    width: 85%;
+    max-width: 650px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão de fechar do Modal */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos das listas dentro do Modal */
+#maintenance-history-list,
+#modal-upcoming-list,
+#upcoming-appointments-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+#maintenance-history-list,
+#modal-upcoming-list {
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+#upcoming-appointments-list {
+    max-height: none;
+}
+
+#maintenance-history-list li,
+#modal-upcoming-list li,
+#upcoming-appointments-list li {
+    background-color: #e9ecef;
+    margin-bottom: 8px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    border-left: 4px solid #adb5bd;
+    word-wrap: break-word;
+}
+
+#modal-upcoming-list li,
+#upcoming-appointments-list li {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+/* Estilos dos Alertas */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+.alert-warning { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+
+    #vehicle-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+}
+
+@media (max-width: 480px) {
+    body { padding: 10px; }
+
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.2em; }
+
+    .container {
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    section { padding: 15px; }
+
+    .modal-content { padding: 15px; margin: 15% auto; }
+
+    .header-icons img { height: 40px; } /* Ícones menores em telas muito pequenas */
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-header h4 {
+        font-size: 1em;
+    }
+
+    .vehicle-icon {
+        margin-top: 8px;
+        align-self: center;
+    }
+
+    .vehicle-card button.manage-maintenance-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #maintenance-history-list,
+    #modal-upcoming-list {
+        max-height: 150px;
+    }
+}
